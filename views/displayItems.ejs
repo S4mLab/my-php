@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="theme-color" content="#000000" />
+		<title>PHP Sales System</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+
+	<body>
+		<div id="root">
+			<div class="View menuview">
+		<h1 class="Banner">All Products</h1>
+		<div class="Message">
+		<table class="tableDisplay">
+			<tr>
+				<th>Name</th>
+				<th>Quantity</th>
+				<th>Low stock definition</th>
+				<th>Cost Price</th>
+				<th>Retail Price</th>
+				<th>Prescription</th>
+				<th>Low Stock?</th>
+				<th></th>
+				<th></th>
+			</tr>
+			<% for (let item of items) {%>
+			<% if (item.quantity <= item.low_def) { %>
+			<tr class="lowstock">
+			<%} else { %>	
+			<tr>	
+			<% } %>
+				<td><%= item.name %></td>
+				<td><%= item.quantity %></td>
+				<td><%= item.low_def %></td>
+				<td><%= item.cost_price %></td>
+				<td><%= item.retail_price %></td>
+				<td><%= item.prescription %></td>
+				<% if (item.quantity <= item.low_def) { %>
+				<td>Below Threshold</td>
+				<%} else { %>
+				<td>Above Threshold</td>
+				<% } %>
+				<td><a class="NavButtons" href="/item/edit/<%= item._id %> ">Edit</a></td>
+				<td>
+					<form method="POST" action="/item/<%= item._id %>?_method=DELETE">
+						<button>Delete</button>
+					</form>
+				</td>
+			</tr>
+			<% } %>
+		</table>
+		<div class="NavButtons tableNav">
+			<a href="/item/add">
+				<div class="NavButtonLogin">Add Item</div>
+			</a>
+			<a href="/item/menu">
+				<div class="NavButtonLogin">Back</div>
+			</a>
+		</div>
+		</div>
+		</div>
+		</div>
+	</body>
+</html>

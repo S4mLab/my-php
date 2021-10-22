@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="theme-color" content="#000000" />
+		<title>PHP Sales System</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+		<div id="root">
+			<div class="View menuview">
+				<h1 class="Banner">Edit Item</h1>
+				<div class="Message formbody">
+					<form method="POST" action="/item/<%= item._id %>?_method=PUT">
+						<div class="row">
+							<label for="name">Product Name</label>
+							<input type="text" id="name" name="item[name]" value="<%= item.name %> " />
+						</div>
+						<div class="row">
+							<label for="quantity">Quantity</label>
+							<input
+								type="number"
+								id="quantity"
+								name="item[quantity]"
+								value="<%= parseInt(item.quantity) %>"
+							/>
+						</div>
+						<div class="row">
+							<label for="low_def">Low stock definition</label>
+							<input type="number" id="low_def" name="item[low_def]" value="<%= item.low_def %>" />
+						</div>
+						<div class="row">
+							<label for="cost_price">Cost Price</label>
+							<input
+								type="float"
+								id="cost_price"
+								name="item[cost_price]"
+								value="<%=item.cost_price %>"
+							/>
+						</div>
+						<div class="row">
+							<label for="retail_price">Retail Price</label>
+							<input
+								type="float"
+								id="retail_price"
+								name="item[retail_price]"
+								value="<%= item.retail_price %>"
+							/>
+						</div>
+						<!-- prettier-ignore -->
+						<div class="row">
+							<label for="prescription">Prescription</label>
+							<input type="checkbox" id="prescription" name="item[prescription]" 
+                            <% if (item.prescription) { %>
+                             checked
+                            <% } %>
+                            />
+						</div>
+						<input type="submit" class="NavButtonLogin" style="border: 0cm; margin: 10px 5px" />
+					</form>
+					<div class="NavButtons">
+						<a href="/item/display">
+							<div class="NavButtonLogin" style="border: 0cm; margin: 10px 5px">Back</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

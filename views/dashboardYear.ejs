@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="theme-color" content="#000000" />
+		<title>PHP Sales System</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+
+	<body>
+		<div id="root">
+			<div class="View menuview">
+		<h1 class="Banner">All Sales</h1>
+		<div class="Message">
+		<div class="Message">
+			<h3>Sort by Number Sold</h3>
+			<br>
+			<table class="tableDisplay">
+				<tr>
+				<th>Product ID</th>
+				<th>Sales Date</th>
+				<th>Number Sold</th>
+				<th>Profit</th>
+			</tr>
+			<% for (let salesRecord of yearSortByNoOfSales) {%>
+			<tr>
+				<td><%= salesRecord.productID%></td>
+				<td><%= salesRecord.dateOfSale.toDateString() %></td>
+				<td><%= salesRecord.NumSold %></td>
+				<td><%= salesRecord.profit %></td>
+			</tr>
+			<% } %>
+		</table>
+		</div>	
+		<div class="Message">
+			<h3>Sort by Profit</h3>
+			<br>
+			<table class="tableDisplay">
+				<tr>
+				<th>Product ID</th>
+				<th>Sales Date</th>
+				<th>Number Sold</th>
+				<th>Profit</th>
+			</tr>
+			<% for (let salesRecord of yearSortByProfit) {%>
+			<tr>
+				<td><%= salesRecord.productID%></td>
+				<td><%= salesRecord.dateOfSale.toDateString() %></td>
+				<td><%= salesRecord.NumSold %></td>
+				<td><%= salesRecord.profit %></td>
+			</tr>
+			<% } %>
+		</table>
+		</div>
+		<div class="NavButtons tableNav">
+			<a href="/dashboard">
+				<div class="NavButtonLogin" style="left: 0">Back</div>
+			</a>
+			</div>
+			</div>
+		</div>
+	</body>
+</html>

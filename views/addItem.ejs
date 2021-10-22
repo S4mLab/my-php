@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="theme-color" content="#000000" />
+		<title>| WHATABYTE</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+
+	<body>
+		<div id="root">
+			<div class="View menuview">
+				<h1 class="Banner">Add Item</h1>
+				<div class="Message formbody">
+					<form method="POST" action="/item">
+						<div class="row">
+							<label for="name">Product Name</label>
+							<input type="text" id="name" name="item[name]" /><br />
+						</div>
+						<div class="row">
+							<label for="quantity">Quantity</label>
+							<input type="number" id="quantity" name="item[quantity]" /><br />
+						</div>
+						<div class="row">
+							<label for="low_def">Low stock definition</label>
+							<input type="number" id="low_def" name="item[low_def]" /><br />
+						</div>
+						<div class="row">
+							<label for="cost_price">Cost Price</label>
+							<input type="float" id="cost_price" name="item[cost_price]" /><br />
+						</div>
+						<div class="row">
+							<label for="retail_price">Retail Price</label>
+							<input type="float" id="retail_price" name="item[retail_price]" /><br />
+						</div>
+						<div class="row">
+							<label for="prescription">Prescription</label>
+							<input type="checkbox" id="prescription" name="item[prescription]" /><br />
+						</div>
+						<br />
+						<div class="row"><input type="submit" value="Submit" /></div>
+					</form>
+					<br />
+					<div class="NavButtons">
+						<a href="/item/menu">
+							<div class="NavButtonLogin">Back</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

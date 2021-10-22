@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="theme-color" content="#000000" />
+		<title>| WHATABYTE</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+
+	<body>
+		<div class="View menuview">
+			<h1 class="Banner">Add Sale</h1>
+			<div class="Message formbody">
+				<form method="post" action="/sales/add" id="NewSale">
+					<div class="row">
+						<label for="ItemCode">Item code:</label>
+						<input
+							type="number"
+							id="itemcode"
+							name="ItemCode"
+							placeholder="Item Code/EAN"
+						/><br /><br />
+					</div>
+					<div class="row">
+						<label for="saleQuantity">Sale quantity:</label>
+						<input
+							type="number"
+							id="saleQuantity"
+							name="SaleQuantity"
+							placeholder="Number Sold"
+						/><br /><br />
+					</div>
+					<div class="row">
+						<label for="Date">Date:</label>
+						<input type="date" id="Salesdate" name="SaleDate" /><br /><br />
+					</div>
+					<div class="row">
+						<input type="submit" class="NavButtonLogin" style="border: 0cm; margin: 0 5px" />
+					</div>
+				</form>
+				<br />
+				<div class="NavButtons">
+					<a href="/sales/menu">
+						<div class="NavButtonLogin" style="border: 0cm; margin: 0 5px">Back</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

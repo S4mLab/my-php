@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="theme-color" content="#000000" />
+		<title>PHP Sales System</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+		<div class="View menuview">
+			<h1 class="Banner">Edit Sales</h1>
+			<div class="Message formbody">
+				<form method="POST" action="/sales/<%= sales._id %>?_method=PUT">
+					<div class="row">
+						<label for="date">Date</label>
+						<input
+							id="date"
+							type="date"
+							name="sales[DateOfSale]"
+							value="<%= sales.DateOfSale.toISOString().split('T')[0] %>"
+						/>
+					</div>
+					<div class="row">
+						<label for="product">Product ID</label>
+						<input
+							id="product"
+							type="text"
+							name="sales[product_ID]"
+							value="<%= sales.product_ID %> "
+						/>
+					</div>
+					<div class="row">
+						<label for="quantity">Quantity</label>
+						<input
+							id="quantity"
+							type="number"
+							name="sales[NumberSold]"
+							value="<%= parseInt(sales.NumberSold) %>"
+						/>
+					</div>
+					<div class="NavButtons">
+						<input type="submit" class="NavButtonLogin" style="border: 0cm; margin: 10px 5px" />
+						<a href="/sales/display">
+							<div class="NavButtonLogin" style="border: 0cm; margin: 10px 5px">Back</div>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
